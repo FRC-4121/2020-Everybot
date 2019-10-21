@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.AutoDriveCommandGroup;
+import frc.robot.subsystems.BeltIntakeSubsystem;
 import frc.robot.subsystems.GenericDriveTrain;
 import frc.robot.subsystems.MecanumDriveTrain;
 import frc.robot.subsystems.WestCoastDriveTrain;
@@ -49,6 +50,7 @@ public class Robot extends TimedRobot {
 
   //Declare subsystems
   public static GenericDriveTrain drivetrain;
+  public static BeltIntakeSubsystem belt;
 
   //Declare sensors and control inputs
 	public static OI oi;
@@ -102,7 +104,7 @@ public class Robot extends TimedRobot {
     * 2019 default: Mecanum
     */
 
-		driveType = 2;
+		driveType = 1;
 	  
     //Initialize the proper drive train based on drive type
     switch(driveType) {
@@ -120,7 +122,8 @@ public class Robot extends TimedRobot {
 		
     }
     
-    //Init output-input systems
+    //Init output-input systems and other subsystems
+    belt = new BeltIntakeSubsystem();
     oi = new OI();
 
     //Initialize dashboard choosers
