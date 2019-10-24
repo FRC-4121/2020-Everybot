@@ -40,11 +40,11 @@ public class WestCoastDriveTrain extends GenericDriveTrain {
 
     if (RobotMap.DIRECTION_MULTIPLIER == 1)
 
-      westCoastDrive.tankDrive(leftJoyY * RobotMap.DIRECTION_MULTIPLIER, rightJoyY * RobotMap.DIRECTION_MULTIPLIER);
+      westCoastDrive.tankDrive(leftJoyY * -RobotMap.DIRECTION_MULTIPLIER, rightJoyY * -RobotMap.DIRECTION_MULTIPLIER);
 
     else
 
-      westCoastDrive.tankDrive(rightJoyY * RobotMap.DIRECTION_MULTIPLIER, leftJoyY * RobotMap.DIRECTION_MULTIPLIER);
+      westCoastDrive.tankDrive(leftJoyY * -RobotMap.DIRECTION_MULTIPLIER, rightJoyY * -RobotMap.DIRECTION_MULTIPLIER);
     
     westCoastDrive.setSafetyEnabled(false);
 

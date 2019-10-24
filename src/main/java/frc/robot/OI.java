@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.ChangeTeleopSpeed;
+import frc.robot.commands.InvertWCDDirection;
 import frc.robot.commands.RunBeltDown;
 import frc.robot.commands.RunBeltUp;
 import frc.robot.commands.StopBelt;
@@ -24,7 +25,7 @@ public class OI {
 
 	//Define joystick objects and joystick button functions
 	public Joystick leftJoy, rightJoy;
-	public Button changeDriveSpeed, beltUp, beltDown;
+	public Button invertDirection, beltUp, beltDown;
 
 	public OI() {
 
@@ -42,12 +43,12 @@ public class OI {
 		 */
 
 		//Initialize Joystick buttons
-		changeDriveSpeed = new JoystickButton(rightJoy, 2);
+		invertDirection = new JoystickButton(rightJoy, 2);
 		beltUp = new JoystickButton(rightJoy, 1);
 		beltDown = new JoystickButton(leftJoy, 1);
 
 		//Configure Joystick button commands
-		changeDriveSpeed.whenPressed(new ChangeTeleopSpeed());
+		invertDirection.whenPressed(new InvertWCDDirection());
 		beltUp.whileHeld(new RunBeltUp());
 		beltUp.whenReleased(new StopBelt());
 		beltDown.whileHeld(new RunBeltDown());

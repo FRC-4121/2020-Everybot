@@ -23,16 +23,16 @@ public class RobotMap {
 
 	//Motor Controller Constants - WCD
 	//(Not for 2019 Season Use)
-	public static final int LEFT_MOTOR_MASTER = -1;
-	public static final int LEFT_MOTOR_SLAVE_1 = -1;
+	public static final int LEFT_MOTOR_MASTER = 3;
+	public static final int LEFT_MOTOR_SLAVE_1 = 4;
 	public static final int LEFT_MOTOR_SLAVE_2 = -1;
-	public static final int RIGHT_MOTOR_MASTER = -1;
-	public static final int RIGHT_MOTOR_SLAVE_1 = -1;
+	public static final int RIGHT_MOTOR_MASTER = 0;
+	public static final int RIGHT_MOTOR_SLAVE_1 = 1;
 	public static final int RIGHT_MOTOR_SLAVE_2 = -1;
-	public static final int BELT_MOTOR = -1;
+	public static final int BELT_MOTOR = 2;
 
 	//Invert direction (for WCD only)
-	public static int DIRECTION_MULTIPLIER = -1;
+	public static int DIRECTION_MULTIPLIER = 1;
 	
 	//Speed multiplier for more accurate driving in mecanum
 	public static final double MECANUM_MULTIPLIER = 0.5;

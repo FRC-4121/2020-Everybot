@@ -9,10 +9,10 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.RobotMap;
 
-public class DriveWithJoysticksCommand extends Command {
-  
-  public DriveWithJoysticksCommand() {
+public class InvertWCDDirection extends Command {
+  public InvertWCDDirection() {
     
     requires(Robot.drivetrain);
   }
@@ -25,18 +25,13 @@ public class DriveWithJoysticksCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    //Mecanum: 
-    //Robot.drivetrain.drive(-Robot.oi.rightJoy.getY(), Robot.oi.rightJoy.getX(), Robot.oi.rightJoy.getZ(), false);
-    
-    //West Coast Drive:
-    Robot.drivetrain.drive(Robot.oi.leftJoy.getX(), Robot.oi.leftJoy.getY(), 
-                            Robot.oi.rightJoy.getX(), Robot.oi.rightJoy.getY());
+    RobotMap.DIRECTION_MULTIPLIER *= -1;
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return true;
   }
 
   // Called once after isFinished returns true
